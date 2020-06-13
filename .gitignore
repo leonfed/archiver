@@ -1,0 +1,9 @@
+.idea
+.qmake.stash
+Makefile
+*.o
+*.ind
+moc_*
+ui_mainwindow.h
+qrc_icons.cpp
+archiver
