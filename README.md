@@ -7,3 +7,8 @@ qmake -makefile
 make
 ```
 
+**Run:**
+
+```
+./archiver
+```
