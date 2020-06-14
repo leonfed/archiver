@@ -1,25 +1,19 @@
 #ifndef ARCHIVE_H
 #define ARCHIVE_H
 
-#include <QObject>
 #include <iostream>
 #include <vector>
 #include <string>
 #include <debug/vector>
 #include "tree.h"
 
-struct archive : public QObject
-{
-    Q_OBJECT
+struct archive {
+
 
 public:
     archive(std::string& input, std::string& output);
 
-public slots:
     void doWork();
-
-signals:
-    void send(std::string);
 
 private:
     //count symbols and check_xor

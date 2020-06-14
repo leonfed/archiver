@@ -65,7 +65,6 @@ void unarchive::doWork() {
     }
     in.close();
     out.close();
-    send("Done");
 }
 
 int unarchive::get_bit(unsigned char* a, int i) {

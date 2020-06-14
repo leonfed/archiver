@@ -43,7 +43,6 @@ void archive::doWork() {
     in.close();
     in2.close();
     out.close();
-    send("Done");
 }
 
 void archive::count(unsigned char *data, int length) {

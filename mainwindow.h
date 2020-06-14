@@ -29,8 +29,6 @@ private slots:
 
     void on_actionStop_triggered();
 
-    void callback(std::string);
-
 private:
     Ui::MainWindow *ui;
 };

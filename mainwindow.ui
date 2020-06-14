@@ -20,7 +20,7 @@
       <item>
        <widget class="QLabel" name="directory">
         <property name="text">
-         <string>FIle isn't selected</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -56,40 +56,37 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionIndex"/>
+   <addaction name="separator"/>
    <addaction name="actionRun"/>
+   <addaction name="separator"/>
    <addaction name="actionStop"/>
   </widget>
   <action name="actionIndex">
-   <property name="icon">
-    <iconset resource="icons.qrc">
-     <normaloff>:/icon/icon/index.png</normaloff>:/icon/icon/index.png</iconset>
-   </property>
    <property name="text">
-    <string>Index</string>
+    <string>Choose file</string>
+   </property>
+   <property name="toolTip">
+    <string>Choose file</string>
    </property>
   </action>
   <action name="actionRun">
-   <property name="icon">
-    <iconset resource="icons.qrc">
-     <normaloff>:/icon/icon/run.png</normaloff>:/icon/icon/run.png</iconset>
-   </property>
    <property name="text">
-    <string>Run</string>
+    <string>Archive</string>
+   </property>
+   <property name="toolTip">
+    <string>Archive</string>
    </property>
   </action>
   <action name="actionStop">
-   <property name="icon">
-    <iconset resource="icons.qrc">
-     <normaloff>:/icon/icon/srop.png</normaloff>:/icon/icon/srop.png</iconset>
-   </property>
    <property name="text">
-    <string>Stop</string>
+    <string>Unarchive</string>
+   </property>
+   <property name="toolTip">
+    <string>Unarchive</string>
    </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

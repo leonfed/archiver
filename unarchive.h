@@ -1,23 +1,16 @@
 #ifndef UNARCHIVE_H
 #define UNARCHIVE_H
 
-#include <QObject>
 #include "tree.h"
 #include <vector>
 #include <string>
 
-struct unarchive : public QObject
-{
-    Q_OBJECT
+struct unarchive {
 
 public:
     unarchive(std::string& input, std::string& output);
 
-public slots:
     void doWork();
-
-signals:
-    void send(std::string);
 
 private:
 

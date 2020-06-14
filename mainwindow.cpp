@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "indexes.h"
 #include "archive.h"
 #include "unarchive.h"
 #include <QFileDialog>
@@ -12,35 +11,25 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->statusString->setText("Choose file");
 }
 
 MainWindow::~MainWindow() {
     delete ui;
 }
 
-void MainWindow::callback(std::string status) {
-    QString qstrting = QString::fromUtf8(status.c_str());
-    ui->statusString->setText(qstrting);
-}
-
 void MainWindow::callArchive(std::string &input, std::string &output) {
     ui->statusString->setText("Processing...");
-    QThread *thread = new QThread;
     archive *arch = new archive(input, output);
-    arch->moveToThread(thread);
-    connect(arch, SIGNAL(send(std::string)), this, SLOT(callback(std::string)));
-    connect(thread, SIGNAL(started()), arch, SLOT(doWork()));
-    thread->start();
+    arch->doWork();
+    ui->statusString->setText("Done...");
 }
 
 void MainWindow::callUnarchive(std::string &input, std::string &output) {
     ui->statusString->setText("Processing...");
-    QThread *thread = new QThread;
     unarchive *unarch = new unarchive(input, output);
-    unarch->moveToThread(thread);
-    connect(unarch, SIGNAL(send(std::string)), this, SLOT(callback(std::string)));
-    connect(thread, SIGNAL(started()), unarch, SLOT(doWork()));
-    thread->start();
+    unarch->doWork();
+    ui->statusString->setText("Done...");
 }
 
 void MainWindow::on_actionIndex_triggered() {
@@ -50,6 +39,7 @@ void MainWindow::on_actionIndex_triggered() {
         if (path != "") {
             ui->directory->setText(path);
         }
+        ui->statusString->setText("File is seleceted");
     } catch (...) {
         ui->directory->setText("File isn't selected");
     }
