@@ -15,7 +15,7 @@ public:
 
     builderIndex(std::string directory);
 
-public slots:
+public slos:
     void doWork();
     void toStop();
 

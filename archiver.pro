@@ -27,14 +27,14 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    builderindex.cpp \
-    searcher.cpp
+    archive.cpp \
+    unarchive.cpp
 
 HEADERS += \
         mainwindow.h \
-    indexes.h \
-    builderindex.h \
-    searcher.h
+    tree.h \
+    archive.h \
+    unarchive.h
 
 FORMS += \
         mainwindow.ui
