@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <debug/vector>
 #include "tree.h"
 
 struct archive {
