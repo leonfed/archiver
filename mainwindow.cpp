@@ -22,7 +22,7 @@ void MainWindow::callArchive(std::string &input, std::string &output) {
     ui->statusString->setText("Processing...");
     archive *arch = new archive(input, output);
     arch->doWork();
-    ui->statusString->setText("Done...");
+    ui->statusString->setText("Done");
 }
 
 void MainWindow::callUnarchive(std::string &input, std::string &output) {
